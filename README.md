@@ -47,7 +47,7 @@ The backend provides REST endpoints for document upload, question answering, and
 
 ```bash
 # Development mode with auto-reload
-uvicorn app.main:app --reload
+uvicorn main:app --reload
 
 # Production mode
 # uvicorn app.main:app --host 0.0.0.0 --port 8000
@@ -65,6 +65,9 @@ The Streamlit app provides a user-friendly web interface for uploading documents
 # Default port (8501)
 streamlit run app/streamlit_app.py
 
+# Or, if you want to use the root-level app.py as entrypoint:
+streamlit run app.py
+
 # Custom port (if 8501 is in use)
 # streamlit run app/streamlit_app.py --server.port 8502
 ```
@@ -76,40 +79,45 @@ streamlit run app/streamlit_app.py
 
 ```
 Langgraph-RAG-Application/
-├── app/                    # Main application package
-│   ├── __init__.py         # Package initialization
+├── app/
+│   ├── __init__.py
 │   ├── main.py             # FastAPI application entry point
 │   ├── streamlit_app.py    # Streamlit UI application
-│   ├── api/                # API routes and endpoints
-│   ├── core/               # Core application logic
+│   ├── api/
 │   │   ├── __init__.py
-│   │   └── ...
-│   ├── config/             # Configuration management
+│   │   └── routes.py
+│   ├── core/
 │   │   ├── __init__.py
-│   │   └── ...
-│   └── utils/              # Utility functions
+│   │   ├── agent.py
+│   │   ├── document_processor.py
+│   │   ├── storage.py
+│   │   └── vector_store.py
+│   ├── config/
+│   │   ├── __init__.py
+│   │   └── settings.py
+│   └── utils/
 │       ├── __init__.py
-│       └── ...
-├── data/                   # Application data
-│   ├── chats/              # Chat history storage
-│   └── documents/          # Uploaded documents storage
-├── tests/                  # Test files
-├── .env                    # Environment variables
-├── .gitignore
-├── requirements.txt        # Python dependencies
-├── agent.py                # Legacy agent implementation
-├── config.py               # Legacy configuration
-├── document_processor.py   # Legacy document processing
-├── main.py                 # Legacy entry point
-├── storage.py              # Legacy storage
-├── test.py                 # Test file
-└── README.md               # This file
+│       └── testing.py
+├── data/
+│   ├── chats/
+│   └── documents/
+├── requirements.txt
+├── README.md
+├── app.py                  # (Optional) Streamlit entrypoint
+├── agent.py                # (Legacy/utility)
+├── config.py               # (Legacy/utility)
+├── document_processor.py   # (Legacy/utility)
+├── main.py                 # (Legacy/utility)
+├── storage.py              # (Legacy/utility)
+├── test.py                 # (Utility/test)
+├── vector_store.py         # (Legacy/utility)
+└── venv/
 ```
 
 ## Key Components
 
 - **`app/streamlit_app.py`**: Main Streamlit application (UI for upload & chat)
-- **`main.py`**: FastAPI backend (REST API for document and chat management)
+- **`app/main.py`**: FastAPI backend (REST API for document and chat management)
 - **`app/core/`**: Core logic (agent, document processing, storage, vector store)
 - **`app/api/`**: FastAPI route definitions
 - **`data/`**: Persistent storage for chats and documents
@@ -126,44 +134,22 @@ Langgraph-RAG-Application/
 - `POST /ask` — Ask a question
 - `GET /documents` — List all documents
 - `DELETE /documents/{namespace}` — Delete a document
-## API Endpoints
-
-### Document Management
-- `POST /upload` - Upload a document
-- `GET /documents` - List all uploaded documents
-- `DELETE /documents/{doc_id}` - Delete a specific document
-
-### Question Answering
-- `POST /ask` - Ask a question about your documents
-
-### Chat Management
-- `GET /chats` - List all chats
-- `GET /chats/{chat_id}` - Get a specific chat history
-- `DELETE /chats/{chat_id}` - Delete a specific chat history
+- `GET /chats` — List all chats
+- `GET /chats/{chat_id}` — Get a specific chat history
+- `DELETE /chats/{chat_id}` — Delete a specific chat history
 
 For full interactive API documentation, visit: http://localhost:8000/docs
 
 ## Development
 
-### Running Tests
-```bash
-pytest tests/
-```
-
-### Code Formatting
+### Code Formatting & Linting
 ```bash
 # Install pre-commit hooks
 pre-commit install
-
 # Run all pre-commit hooks
 pre-commit run --all-files
-```
-
-### Linting
-```bash
 # Run flake8
 flake8 .
-
 # Run black code formatter
 black .
 ```
