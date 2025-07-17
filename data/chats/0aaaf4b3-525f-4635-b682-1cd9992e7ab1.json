@@ -1,0 +1,33 @@
+[
+  {
+    "role": "user",
+    "content": "importance of hr policy"
+  },
+  {
+    "role": "assistant",
+    "content": "HR Policy is important as it provides direction in the growth of the organization and management of employees. It sets clear expectations, standards, and procedures, eliminating ambiguity and adhocism. It also enables clarity and norming of practices, guides standardization, and promotes faith in HR practices. Additionally, it helps in attracting and retaining committed employees, provides fair compensation, and rewards performance, ultimately leading to a healthy work environment.",
+    "sources": [
+      {
+        "source_type": "PDF",
+        "page": "1.0",
+        "sheet_name": null,
+        "relevance_score": 0.83,
+        "text_snippet": "\u00a0\n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 \u00a0\n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0IIA\u00a0HR\u00a0POLICY\u00a0REVISION\u00a01.1\u00a0 \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0..."
+      },
+      {
+        "source_type": "PDF",
+        "page": "4.0",
+        "sheet_name": null,
+        "relevance_score": 0.8,
+        "text_snippet": "\u00a0\n\u00a0 IIA\u00a0HR\u00a0POLICY\u00a0REVISION\u00a01.1\u00a0 7\u00a0 the job as outlined in the position summary. The HR department at Head Office of IIA must \nassess the relative impo..."
+      },
+      {
+        "source_type": "PDF",
+        "page": "10.0",
+        "sheet_name": null,
+        "relevance_score": 0.46,
+        "text_snippet": "\u00a0\n\u00a0 IIA\u00a0HR\u00a0POLICY\u00a0REVISION\u00a01.1\u00a0 13\u00a0 7.1 Remuneration Policy \nIIA seeks to compensate all its employees with fairness for following purpose \nThe remune..."
+      }
+    ]
+  }
+]
